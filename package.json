@@ -1,0 +1,58 @@
+{
+  "name": "climate-resiliancy.clir.org",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf _site",
+    "css-compile": "sass --style compressed --source-map --embed-sources --no-error-css --load-path=node_modules src/_sass/:docs/assets/css/",
+    "css-lint": "stylelint src/_sass/",
+    "css-prefix": "postcss --replace docs/assets/css/style.css --use autoprefixer --map",
+    "watch:sass": "sass --watch src/_sass:docs/assets/css",
+    "build:sass": "sass --style compressed --source-map --embed-sources --no-error-css --load-path=node_modules src/_sass:docs/assets/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clirdlf/climate-resiliancy.clir.org.git"
+  },
+  "keywords": [],
+  "author": "CLIR",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/clirdlf/climate-resiliancy.clir.org/issues"
+  },
+  "homepage": "https://github.com/clirdlf/climate-resiliancy.clir.org#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^3.1.0",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-bundle": "^1.0.4",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
+    "@parcel/transformer-sass": "^2.9.3",
+    "@quasibit/eleventy-plugin-schema": "^1.11.0",
+    "autoprefixer": "^10.4.14",
+    "cross-env": "^7.0.3",
+    "eleventy-plugin-excerpt": "^1.1.2",
+    "html-minifier": "^4.0.0",
+    "luxon": "^3.3.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-attrs": "^4.1.6",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.9.3",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.62.0",
+    "stylelint": "^15.5.0",
+    "stylelint-config-twbs-bootstrap": "^9.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.4"
+  }
+}
