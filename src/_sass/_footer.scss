@@ -1,0 +1,29 @@
+@import "https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans";
+@import "https://cdn.rawgit.com/clirdlf/logo-fonts/master/style.min.css";
+@import "https://cdn.rawgit.com/clirdlf/logo-fonts/master/clir-font/stylesheet.min.css";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+$clir-burgundy: #A51E36;
+
+.clir-color {
+	color: $clir-burgundy;
+}
+.clir-font {
+	font-family: "A028", serif;
+}
+
+.logo {
+	font-size: 22px;
+	letter-spacing: 1px;
+	margin-bottom: 0;
+}
+
+footer {
+
+    a {
+        &.btn {
+            @include button-variant($clir-burgundy, $clir-burgundy);
+        }
+    }
+}
