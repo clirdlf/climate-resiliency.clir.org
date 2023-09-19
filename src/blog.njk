@@ -1,0 +1,26 @@
+---
+layout: page.njk
+title: Blog Posts
+---
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+
+            {%- for post in collections.posts -%}
+                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <article class="card shadow">
+                        <img class="rounded card-img-top" src="{{ post.data.image }}" alt="post-thumb">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a class="text-dark" href="{{ post.url }}">{{ post.data.title }}</a>
+                            </h4>
+                            <p class="cars-text">{{ post.content | excerpt }}</p>
+                            <a href="{{ post.url }}" class="btn btn-xs btn-primary">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>

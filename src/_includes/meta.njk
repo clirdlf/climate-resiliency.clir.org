@@ -1,0 +1,25 @@
+{# We use eleventy-rss plugin absoluteUrl filter as helper for absolute URL generation #}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{# General #}
+<meta name="description" content="{{ meta.description or site.description }}">
+
+{# Open Graph #}
+{%- if meta.image -%}
+<meta property="og:image" content="{{ site.icon | url | absoluteUrl(site.baseUrl) }}">
+{%- endif -%}
+{# eo Open Graph #}
+
+{# Twitter #}
+<meta name="twitter:card" content="{% if site.icon -%}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:title" content="{{ title or site.name }}">
+<meta name="twitter:description" content="{{ meta.description or site.description}}">
+{%- if meta.image -%}
+<meta property="twitter:image" content="{{ site.icon | url | absoluteUrl(site.baseUrl) }}">
+{%- endif -%}
+{# eo Twitter #}
+
+{# Favicon #}
+<link rel="icon" href="{{ site.icon | url }}">
+
+{# This file is ignored by prettier by now /bc too much damage ;-), see .prettierignore #}

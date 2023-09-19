@@ -1,8 +1,11 @@
 {
+    "lang": "en",
+    "host": "clir",
     "short_name": "Climate Resiliancy",
     "name": "Climate Resiliancy",
     "icon": "/assets/images/logo.png",
     "url": "https://climate-resiliancy.clir.org/",
     "bing": "",
-    "google-analytics": ""
+    "google-analytics": "",
+    "description": "description"
 }

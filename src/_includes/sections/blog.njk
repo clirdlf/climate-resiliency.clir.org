@@ -1,0 +1,27 @@
+<!-- blog -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Blog Posts</h2>
+            </div>
+
+            {%- for post in collections.posts | limit(3) -%}
+                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <article class="card shadow">
+                        {% set image_path = ["src/", post.data.image] | join %}
+                        {% image image_path, "post-thumb", "rounded card-img-top", "(min-width: 30em) 50vw, 100vw" %}
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a class="text-dark" href="{{ post.url }}">{{ post.data.title }}</a>
+                            </h4>
+                            <p class="cars-text">{{ post.content | excerpt }}</p>
+                            <a href="{{ post.url }}" class="btn btn-xs btn-primary">Read</a>
+                        </div>
+                    </article>
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+<!-- /blog -->

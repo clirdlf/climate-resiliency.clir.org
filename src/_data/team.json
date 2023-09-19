@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Amanda Boczar",
+        "title": "Project Director",
+        "institution": "University of South Florida",
+        "image": "https://picsum.photos/368/376?random=1"
+    },
+    {
+        "name": "Amy Drayer",
+        "title": "Advisory Committee",
+        "institution": "University of Minnesota",
+        "image": "https://picsum.photos/368/376?random=2"
+    },
+    {
+        "name": "Wayne Graham",
+        "title": "Advisory Committee",
+        "institution": "CLIR",
+        "image": "https://picsum.photos/368/376?random=3"
+    },
+    {
+        "name": "Alice Rubin",
+        "title": "Producer",
+        "institution": "CLIR",
+        "image": "https://picsum.photos/368/376?random=4"
+    },
+    {
+        "name": "Lisa Spiro",
+        "title": "Advisory Committee",
+        "institution": "Rice University",
+        "image": "https://picsum.photos/368/376?random=5"
+    },
+    {
+        "name": "Justin Wadland",
+        "title": "Advisory Committee",
+        "institution": "Michigan State University",
+        "image": "https://picsum.photos/368/376?random=6"
+    },
+    {
+        "name": "Lena Zentall",
+        "title": "Advisory Committee",
+        "institution": "University of California",
+        "image": "https://picsum.photos/368/376?random=7"
+    }
+]
