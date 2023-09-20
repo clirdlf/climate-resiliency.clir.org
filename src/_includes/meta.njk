@@ -6,7 +6,7 @@
 
 {# Open Graph #}
 {%- if meta.image -%}
-<meta property="og:image" content="{{ site.icon | url | absoluteUrl(site.baseUrl) }}">
+    <meta property="og:image" content="{{ site.icon | url | absoluteUrl(site.baseUrl) }}">
 {%- endif -%}
 {# eo Open Graph #}
 
@@ -15,11 +15,26 @@
 <meta name="twitter:title" content="{{ title or site.name }}">
 <meta name="twitter:description" content="{{ meta.description or site.description}}">
 {%- if meta.image -%}
-<meta property="twitter:image" content="{{ site.icon | url | absoluteUrl(site.baseUrl) }}">
+    <meta property="twitter:image" content="{{ site.icon | url | absoluteUrl(site.baseUrl) }}">
 {%- endif -%}
 {# eo Twitter #}
 
 {# Favicon #}
 <link rel="icon" href="{{ site.icon | url }}">
+
+{%- if site.bing -%}
+<link name="msvalidate.01" content="{{ site.bing }}" />
+{%- endif -%}
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtag }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', '{{ site.gtag }}');
+</script>
 
 {# This file is ignored by prettier by now /bc too much damage ;-), see .prettierignore #}
