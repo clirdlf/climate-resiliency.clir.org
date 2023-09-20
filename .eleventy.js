@@ -5,6 +5,9 @@ const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
 const markdownItRenderer = require("markdown-it")("commonmark");
 
+// optimizations
+const htmlmin = require("html-minifier");
+
 const CleanCSS = require("clean-css"); // https://www.11ty.dev/docs/quicktips/inline-css/
 
 const excerpt = require("eleventy-plugin-excerpt"); //https://github.com/psalaets/eleventy-plugin-excerpt
@@ -118,6 +121,22 @@ module.exports = (eleventyConfig) => {
 
 	eleventyConfig.addFilter("postDate", (dateObj) => {
 		return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+	});
+
+	// transforms
+	// https://www.11ty.dev/docs/config/#transforms-example-minify-html-output
+	eleventyConfig.addTransform("htmlmin", function (content) {
+		// Prior to Eleventy 2.0: use this.outputPath instead
+		if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+			let minified = htmlmin.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true,
+			});
+			return minified;
+		}
+
+		return content;
 	});
 
 	// Filters
