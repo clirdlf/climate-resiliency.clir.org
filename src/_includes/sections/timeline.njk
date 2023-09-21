@@ -1,0 +1,195 @@
+<!-- timeline -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Timeline</h2>
+
+                <div id="chart_div"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- /timeline -->
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google
+        .charts
+        .load('current', {'packages': ['gantt']});
+    google
+        .charts
+        .setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+        var data = new google
+            .visualization
+            .DataTable();
+        data.addColumn('string', 'Task ID');
+        data.addColumn('string', 'Task Name');
+        data.addColumn('string', 'Resource');
+        data.addColumn('date', 'Start Date');
+        data.addColumn('date', 'End Date');
+        data.addColumn('number', 'Duration');
+        data.addColumn('number', 'Percent Complete');
+        data.addColumn('string', 'Dependencies');
+
+        data.addRows([
+            [
+                'coordinator',
+                'Hire Program Coordinator',
+                'Recruitment',
+                new Date(2023, 7, 1),
+                new Date(2023, 9, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'CurriculumCommittee',
+                'Establish Curriculum Committee',
+                'Recruitment',
+                new Date(2023, 10, 1),
+                new Date(2024, 0, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'speakers',
+                'Recruit Speakers',
+                'Workshop Series',
+                new Date(2024, 1, 1),
+                new Date(2024, 3, 30),
+                null,
+                0,
+                null
+            ],
+            [
+                'webplatform',
+                'Establish Web Presence',
+                'Workshop Series',
+                new Date(2024, 1, 1),
+                new Date(2024, 2, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'contentplanning',
+                'Scheduling and Content Planning',
+                'Workshop Series',
+                new Date(2024, 1, 1),
+                new Date(2024, 3, 30),
+                null,
+                0,
+                null
+            ],
+            [
+                'advertising',
+                'Advertising and Registration',
+                'Workshop Series',
+                new Date(2024, 4, 1),
+                new Date(2024, 12, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'climatecirclecoordination',
+                'Climate Circle Coordination',
+                'Climate Circles',
+                new Date(2024, 5, 1),
+                new Date(2024, 10, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'climatecircilehosting',
+                'Host Climate Circles',
+                'Climate Circles',
+                new Date(2024, 6, 1),
+                new Date(2025, 3, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'conferences',
+                'Conference Selection',
+                'In-person Networking',
+                new Date(2024, 3, 1),
+                new Date(2024, 8, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'travel',
+                'Travel Planning',
+                'In-person Networking',
+                new Date(2024, 5, 1),
+                new Date(2024, 8, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'hostevents',
+                'Host Events',
+                'In-person Networking',
+                new Date(2024, 9, 1),
+                new Date(2025, 4, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'assessmentsurvey',
+                'Develop Assessment Survey',
+                'Assessment and Publication',
+                new Date(2024, 8, 1),
+                new Date(2024, 11, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'conductassessment',
+                'Conduct Assessment',
+                'Assessment and Publication',
+                new Date(2024, 11, 1),
+                new Date(2025, 6, 31),
+                null,
+                0,
+                null
+            ],
+            [
+                'conductassessment',
+                'Analyze and Prepare White Paper',
+                'Assessment and Publication',
+                new Date(2025, 4, 1),
+                new Date(2025, 6, 31),
+                null,
+                0,
+                null
+            ]
+        ]);
+
+        var options = {
+            height: 400,
+            gantt: {
+                trackHeight: 30
+            }
+        };
+
+        var chart = new google
+            .visualization
+            .Gantt(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+    }
+</script>
