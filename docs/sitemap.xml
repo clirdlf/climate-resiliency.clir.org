@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://climate-resiliancy.clir.org/site.webmanifest</loc>
-		<lastmod>2023-09-12</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://climate-resiliancy.clir.org/about/</loc>
-		<lastmod>2023-09-12</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://climate-resiliancy.clir.org/posts/example/</loc>
-		<lastmod>2023-09-12</lastmod>
+		<lastmod>2023-09-21</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://climate-resiliancy.clir.org/blog/</loc>
-		<lastmod>2023-09-12</lastmod>
+		<lastmod>2023-09-21</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://climate-resiliancy.clir.org/</loc>
-		<lastmod>2023-09-20</lastmod>
+		<lastmod>2023-09-21</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://climate-resiliancy.clir.org/posts/example/</loc>
+		<lastmod>2023-09-21</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://climate-resiliancy.clir.org/site.webmanifest</loc>
+		<lastmod>2023-09-21</lastmod>
 	</url>
 </urlset>
