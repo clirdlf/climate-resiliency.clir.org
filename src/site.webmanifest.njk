@@ -2,10 +2,10 @@
 permalink: /site.webmanifest
 ---
 {
-    "short_name": "{{ site.shortname }}",
+    "short_name": "{{ site.short_name }}",
     "name": "{{ site.name }}",
     "icons": [{
-        "src": "icon.png",
+        "src": "{{ site.icon | url }}",
         "type": "image/png",
         "sizes": "192x192"
     }],

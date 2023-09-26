@@ -1,8 +1,8 @@
 {
-    "short_name": "",
-    "name": "Climate Resiliancy",
+    "short_name": "Climate Resiliancy",
+    "name": "CLIR Climate Resiliancy Workshops",
     "icons": [{
-        "src": "icon.png",
+        "src": "/assets/images/logo.png",
         "type": "image/png",
         "sizes": "192x192"
     }],
