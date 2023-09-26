@@ -10,7 +10,7 @@
             <div class="col-md-4 col-sm-6 mb-4 mb-md-3">
                 <div class="card text-center">
                     {# {% image "src/assets/images/team/member-1.png", member.name, "card-img-top"%} #}
-                    <img src="{{ member.image | url }}" class="card-img-top">
+                    <img src="{{ member.image | url }}" alt="{{ member.name }}" class="card-img-top">
                     <div class="card-body">
                         <h4 class="card-title">{{ member.name }}</h4>
                         <p class="text-light ">{{ member.title }}</p>
