@@ -15,6 +15,7 @@
         var data = new google
             .visualization
             .DataTable();
+
         data.addColumn('string', 'Task ID');
         data.addColumn('string', 'Task Name');
         data.addColumn('string', 'Resource');
@@ -43,7 +44,7 @@
                 new Date(2024, 0, 31),
                 null,
                 10,
-                null
+                'coordinator'
             ],
             [
                 'speakers',
@@ -53,7 +54,7 @@
                 new Date(2024, 3, 30),
                 null,
                 0,
-                null
+                'CurriculumCommittee'
             ],
             [
                 'webplatform',
