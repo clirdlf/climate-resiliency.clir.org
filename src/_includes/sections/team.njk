@@ -5,51 +5,19 @@
             <div class="col-12 text-center">
                 <h2 class="section-title">The Team</h2>
             </div>
-
             {%- for member in team -%}
             <div class="col-md-4 col-sm-6 mb-4 mb-md-3">
                 <div class="card text-center">
                     {# {% image "src/assets/images/team/member-1.png", member.name, "card-img-top"%} #}
                     <img src="{{ member.image | url }}" alt="{{ member.name }}" class="card-img-top">
                     <div class="card-body">
-                        <h4 class="card-title">{{ member.name }}</h4>
-                        <p class="text-light ">{{ member.title }}</p>
-                        <p class="text-light font-secondary">{{ member.institution }}</p>
+                        <h3 class="card-title">{{ member.name }}</h3>
+                        <p class="text-light fs-5">{{ member.title }}</p>
+                        <p class="text-light font-secondary fs-5">{{ member.institution }}</p>
                     </div>
                 </div>
             </div>
             {%- endfor -%}
-{# 
-            <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
-                <div class="card text-center">
-                    <img src="{{ '/assets/images/team/member-1.png' | url }}" class="card-img-top">
-                    <div class="card-body">
-                        <h4 class="card-title">Amanda Boczar</h4>
-                        <p class="text-light font-secondary">Project Director</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
-                <div class="card text-center">
-                    <img src="{{ '/assets/images/team/member-2.png' | url }}" class="card-img-top">
-                    <div class="card-body">
-                        <h4 class="card-title">Jack Schenziwe</h4>
-                        <p class="text-light font-secondary">Project Manager</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
-                <div class="card text-center">
-                    <img src="{{ '/assets/images/team/member-3.png' | url }}" class="card-img-top">
-                    <div class="card-body">
-                        <h4 class="card-title">Jack Schenziwe</h4>
-                        <p class="text-light font-secondary">Project Manager</p>
-                    </div>
-                </div>
-            </div>
-             #}
         </div>
     </div>
 </section>
