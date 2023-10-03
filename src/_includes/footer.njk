@@ -6,16 +6,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img src="{{'/assets/images/logo.png' | url }}" alt="CLIR logo">
-          {# <h5 class="text-light">Email</h5>
-          <p class="text-white paragraph-lg font-secondary">steve.fruits@email.com</p> #}
+          {% set image_path = ["src/", 'assets/images/logo.png'] | join %}
+          {% image image_path , "CLIR logo", "", "(min-width: 30em) 50vw, 100vw" %}
         </div>
         <div class="col-md-4">
-          <h5 class="text-light">About</h5>
+          <h2 class="text-light fs-1">About</h2>
           <p class="text-white paragraph-lg font-secondary">CLIR is an independent, nonprofit organization that forges strategies to enhance research, teaching, and learning environments in collaboration with libraries, cultural institutions, and communities of higher learning.</p>
         </div>
         <div class="col-md-4">
-          <h5 class="text-light">Address</h5>
+          <h2 class="text-light fs-1">Address</h2>
           <p class="text-white paragraph-lg font-secondary">1800 Diagonal Road, Suite 600, Alexandria, VA 22314, USA</p>
           <div id="wcb" class="carbonbadge wcb-d"></div>
           <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
