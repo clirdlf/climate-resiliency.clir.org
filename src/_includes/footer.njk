@@ -8,6 +8,7 @@
         <div class="col-md-4">
           {% set image_path = ["src/", 'assets/images/logo.png'] | join %}
           {% image image_path , "CLIR logo", "", "(min-width: 30em) 50vw, 100vw" %}
+          {% include 'social.njk' %}
         </div>
         <div class="col-md-4">
           <h2 class="text-light fs-1">About</h2>
@@ -20,6 +21,7 @@
           <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
         </div>
       </div>
+
     </div>
   </div>
   <div class="border-top text-center border-dark py-5">
