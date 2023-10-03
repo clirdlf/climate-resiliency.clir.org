@@ -1,19 +1,24 @@
 const wcID = (selector) => document.getElementById(selector);
-const wcU = encodeURIComponent(window.location.href)
+
+// const wcU = encodeURIComponent(window.location.href)
+const wcU = encodeURIComponent('https://climate-resiliency.clir.org/');
 
 const newRequest = function (render = true) {
     // Run the API request because there is no cached result available
-    fetch('https://api.websitecarbon.com/site?url=' + wcU)
+    fetch('https://api.websitecarbon.com/site?url=' + wcU, { mode: 'no-cors'})
+    fetch(url)
         .then(function (r) {
             if (!r.ok) {
                 throw Error(r);
             }
+        
             return r.json();
         })
 
         .then(function (r) {
             if (render) {
                 renderResult(r)
+                console.log('render', r);
             }
 
             // Save the result into localStorage with a timestamp

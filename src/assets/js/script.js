@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         c3left = document.getElementById('l3').offsetLeft,
         c3top = document.getElementById('l3').offsetTop,
         // c4left = document.getElementById('l4').offsetLeft,
-        c4top = document.getElementById('l4').offsetTop,
+        // c4top = document.getElementById('l4').offsetTop,
         c5left = document.getElementById('l5').offsetLeft,
         c5top = document.getElementById('l5').offsetTop,
         c6left = document.getElementById('l6').offsetLeft,

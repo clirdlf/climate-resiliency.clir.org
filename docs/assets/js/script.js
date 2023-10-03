@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
         c2top = document.getElementById('l2').offsetTop,
         c3left = document.getElementById('l3').offsetLeft,
         c3top = document.getElementById('l3').offsetTop,
-        c4left = document.getElementById('l4').offsetLeft,
-        c4top = document.getElementById('l4').offsetTop,
+        // c4left = document.getElementById('l4').offsetLeft,
+        // c4top = document.getElementById('l4').offsetTop,
         c5left = document.getElementById('l5').offsetLeft,
         c5top = document.getElementById('l5').offsetTop,
         c6left = document.getElementById('l6').offsetLeft,
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             /*  mouseParallax('l1', c1left, c1top, x, y, 5); */
             mouseParallax('l2', c2left, c2top, x, y, 25);
             mouseParallax('l3', c3left, c3top, x, y, 20);
-            mouseParallax('l4', c4left, c4top, x, y, 35);
+            // mouseParallax('l4', c4left, c4top, x, y, 35);
             mouseParallax('l5', c5left, c5top, x, y, 30);
             mouseParallax('l6', c6left, c6top, x, y, 45);
             mouseParallax('l7', c7left, c7top, x, y, 30);
