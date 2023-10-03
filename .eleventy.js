@@ -5,9 +5,9 @@ const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
 const markdownItRenderer = require("markdown-it")("commonmark");
 
-// optimizations
-const htmlmin = require("html-minifier");
 
+// optimizations
+const htmlmin = require("html-minifier"); //https://mattclaffey.medium.com/how-to-reduce-you-html-output-in-11ty-ec0c358be2ac
 const CleanCSS = require("clean-css"); // https://www.11ty.dev/docs/quicktips/inline-css/
 
 const excerpt = require("eleventy-plugin-excerpt"); //https://github.com/psalaets/eleventy-plugin-excerpt
@@ -20,6 +20,11 @@ const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation"); // https://www.11ty.dev/docs/plugins/navigation/
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+
+const eleventyPluginHubspot = require('eleventy-plugin-hubspot'); // https://www.npmjs.com/package/eleventy-plugin-hubspot
+
+
+
 
 const Image = require("@11ty/eleventy-img"); // https://www.11ty.dev/docs/plugins/image/
 
@@ -77,6 +82,11 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginBundle);
 	eleventyConfig.addPlugin(pluginDrafts);
+
+	// hubspot plugin
+	eleventyConfig.addPlugin(eleventyPluginHubspot, {
+		portalId: 20251227
+	});
 
 	// watch CSS files for changes
 	eleventyConfig.setBrowserSyncConfig({
