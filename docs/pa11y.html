@@ -1,672 +1,131 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Accessibility Standards - Koa11y</title>
-    <meta name="generator" content="Koa11y 3.0.0" />
+<html lang="en">
+<head>
 
+	<meta charset="utf-8"/>
+	<title>Accessibility Report For "https://climate-resiliency.clir.org/" (Tue Oct 03 2023 09:49:12 GMT-0400 (Eastern Daylight Time))</title>
 
+	<style>
 
-    <!--
+		html, body {
+			margin: 0;
+			padding: 0;
+			background-color: #fff;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			line-height: 22px;
+			color: #333;
+		}
+		li {
+			margin-bottom: 15px;
+		}
+		h1, h2, p, pre, ul {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		h1 {
+			margin-bottom: 10px;
+			font-size: 24px;
+			line-height: 24px;
+		}
+		h2 {
+			font-size: 16px;
+		}
+		pre {
+			white-space: pre-wrap;
+			overflow: auto;
+		}
 
-      Run this test on your site with Koa11y!
+		.page {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 25px;
+		}
 
-      https://open-indy.github.io/Koa11y/
+		.counts {
+			margin-top: 30px;
+			font-size: 20px;
+		}
+		.count {
+			display: inline-block;
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid #eee;
+		}
 
-    -->
+		.clean-list {
+			margin-left: 0;
+			padding-left: 0;
+			list-style: none;
+		}
+		.results-list {
+			margin-top: 30px;
+		}
 
+		.result {
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #eee;
+		}
+		.error {
+			background-color: #fdd;
+			border-color: #ff9696;
+		}
+		.warning {
+			background-color: #ffd;
+			border-color: #e7c12b;
+		}
+		.notice {
+			background-color: #eef4ff;
+			border-color: #b6d0ff;
+		}
 
+	</style>
 
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic');
-      *,
-      *:before,
-      *:after {
-        box-sizing: border-box;
-      }
-      html {
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      }
-      body {
-        background: #FFF;
-        margin-top: 17px;
-        color: #2C3E50;
-        font-family: 'Lato', 'Helvetica Neue', sans-serif;
-        font-size: 15px;
-        line-height: 1.42857143;
-      }
-      h1 {
-        display: inline-block;
-        margin: 21px 0px 20px;
-        font-size: 39px;
-        font-weight: 400;
-        word-break: break-all;
-      }
-      h4 {
-        margin: 0px;
-        color: #636F79;
-        font-size: 14.25px;
-      }
-      pre {
-        display: block;
-        background-color: #ECF0F1;
-        border: 1px solid #CCC;
-        border-radius: 4px;
-        margin: 0px 0px 10.5px;
-        padding: 10px;
-        color: #7B8A8B;
-        font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
-        font-size: 14px;
-        line-height: 1.42857143;
-        overflow: auto;
-        word-break: break-all;
-        word-wrap: break-word;
-      }
-      code {
-        white-space: pre-wrap;
-        word-break: break-all;
-      }
-      .container {
-        max-width: 900px;
-        width: 100%;
-        margin: 0px auto;
-        padding: 0px 15px;
-      }
-      .row {
-        margin-right: -15px;
-        margin-left: -15px;
-        clear: both;
-      }
-      .panel {
-        background-color: #FFF;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        margin-bottom: 21px;
-        box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
-      }
-      .panel-heading {
-        padding: 10px 15px;
-        border-bottom: 1px solid transparent;
-        border-top-right-radius: 3px;
-        border-top-left-radius: 3px;
-        color: #FFF;
-      }
-      .panel-body {
-        padding: 15px;
-      }
-      .panel-footer {
-        background-color: #ECF0F1;
-        border-top: 1px solid #ECF0F1;
-        border-bottom-right-radius: 3px;
-        border-bottom-left-radius: 3px;
-        padding: 10px 15px;
-      }
-      .panel-success { border-color: #18BC9C; }
-      .panel-danger  { border-color: #E74C3C; }
-      .panel-warning { border-color: #F39C12; }
-      .panel-primary { border-color: #2C3E50; }
-      .panel-success>.panel-heading { background-color: #18BC9C; border-color: #18BC9C; }
-      .panel-danger>.panel-heading  { background-color: #E74C3C; border-color: #E74C3C; }
-      .panel-warning>.panel-heading { background-color: #F39C12; border-color: #F39C12; }
-      .panel-primary>.panel-heading { background-color: #2C3E50; border-color: #2C3E50; }
-      .hide {
-        display: none;
-      }
-      .text-capitalize {
-        color: #8C8C8C;
-        font-size: 12px;
-        text-transform: uppercase;
-      }
-      #buttons {
-        display: inline-block;
-        margin-top: 30px;
-        float: right;
-      }
-      #buttons .disabled {
-        box-shadow: none;
-        cursor: pointer;
-        filter: alpha(opacity=65);
-        opacity: 0.65;
-        pointer-events: auto;
-      }
-      .panel-primary i {
-        margin: 0px 7px;
-      }
-      .btn {
-        display: inline-block;
-        background-image: none;
-        border: 2px solid transparent;
-        border-radius: 4px;
-        margin-bottom: 0px;
-        padding: 10px 15px;
-        font-size: 15px;
-        font-weight: normal;
-        line-height: 1.42857143;
-        text-align: center;
-        cursor: pointer;
-        touch-action: manipulation;
-        user-select: none;
-        white-space: nowrap;
-        vertical-align: middle;
-      }
-      .btn-sm {
-        border-radius: 3px;
-        padding: 6px 9px;
-        font-size: 13px;
-        line-height: 1.5;
-      }
-      .btn-danger {
-        background-color: #E74C3C;
-        border-color: #E74C3C;
-        color: #FFF;
-      }
-      .btn-warning {
-        background-color: #F39C12;
-        border-color: #F39C12;
-        color: #FFF;
-      }
-      .btn-primary {
-        background-color: #2C3E50;
-        border-color: #2C3E50;
-        color: #FFF;
-      }
-      .btn-danger,
-      .btn-warning {
-        margin-right: 3px;
-      }
-      .badge {
-        position: relative;
-        top: -1px;
-        display: inline-block;
-        min-width: 10px;
-        background-color: #FFF;
-        border-radius: 10px;
-        padding: 3px 7px;
-        color: #FFF;
-        font-size: 13px;
-        font-weight: bold;
-        line-height: 1;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-      }
-      .btn-danger .badge {
-        color: #E74C3C;
-      }
-      .btn-warning .badge {
-        color: #F39C12;
-      }
-      .btn-primary .badge {
-        color: #2C3E50;
-      }
-      .glyphicon {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        vertical-align: top;
-      }
-      .glyphicon-ok {
-        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMSAtNiAzMiAzMiI+PHBhdGggZmlsbD0iIzE4QkM5QyIgZD0iTS43NzMgMTMuNDkzbDExLjE3MyAxMS4yTDMzLjc1OSAyLjgyNmwtNS42NTMtNS42NTNMMTEuOTE5IDEzLjM2IDYuNDI2IDcuODR6Ii8+PC9zdmc+');
-      }
-      .glyphicon-remove {
-        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAtNiAzMiAzMiI+PHBhdGggZmlsbD0iI0U3NEMzQyIgZD0iTTIuODI3IDE3LjEybDcuNTItNy41Mi03LjUyLTcuNTJMOC40OC0zLjU3MyAxNiAzLjk0N2w3LjUyLTcuNTIgNS42NTMgNS42NTMtNy41MiA3LjUyIDcuNTIgNy41Mi01LjY1MyA1LjY1My03LjUyLTcuNTItNy41MiA3LjUyeiIvPjwvc3ZnPg==');
-      }
-      .glyphicon-ban-circle {
-        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAtNiAzMiAzMiI+PHBhdGggZmlsbD0iI0YzOUMxMiIgZD0iTS4xMDcgOS42cTAtNC4zMiAyLjEzMy03Ljk3M1Q4LjAyNy00LjE2IDE2LTYuMjkzdDcuOTczIDIuMTMzIDUuNzg3IDUuNzg3VDMxLjg5MyA5LjZ0LTIuMTMzIDcuOTczLTUuNzg3IDUuNzg3VDE2IDI1LjQ5MyA4LjAyNyAyMy4zNiAyLjI0IDE3LjU3My4xMDcgOS42em00Ljg1MyAwcTAgMy4wNjcgMS42NTMgNS43MzNMMjEuNzYuMjEzUTE5LjA5My0xLjQ0IDE2LTEuNDRxLTQuNTYgMC03LjggMy4yNFQ0Ljk2IDkuNnptNS40NjcgOS40NjdRMTMuMDE0IDIwLjY0IDE2IDIwLjY0cTQuNTYgMCA3LjgtMy4yNHQzLjI0LTcuOHEwLTIuOTg3LTEuNTczLTUuNTczeiIvPjwvc3ZnPg==');
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container" role="main">
-          <div class="row">
-      <span id="buttons"><button class="btn btn-sm btn-primary">Notices <span class="badge">49</span></button></span>
-      <h1>https://climate-resiliency.clir.org/</h1>
-    </div>
+</head>
+<body>
 
-    <div class="row"><div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_2.H25.2</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that the title element describes the document.<br /><br />
-<pre><code>&lt;title>Climate Resiliancy&lt;/title></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > head > title</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a class="navbar-brand font-tertiary h3 text-white" href="/">clir&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#header > nav > a</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle3.Guideline3_2.3_2_1.G107</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that a change of context does not occur when this input field receives focus.<br /><br />
-<pre><code>&lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">&lt;span class="navbar-toggler-ico...&lt;/button></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#header > nav > button</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img class="img-fluid w-100" src="/assets/images/illustrations/leaf-bg.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#parallax > div:nth-child(2) > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img class="img-fluid w-100" src="/assets/images/illustrations/leaf-bg.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#parallax > div:nth-child(2) > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/dots-cyan.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l2 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/dots-cyan.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l2 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/leaf-orange.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l3 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/leaf-orange.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l3 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/dots-orange.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l4 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/dots-orange.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l4 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/leaf-yellow.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l5 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/leaf-yellow.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l5 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/leaf-cyan.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l6 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/leaf-cyan.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l6 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/dots-group-orange.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l7 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/dots-group-orange.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l7 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/leaf-pink-round.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l8 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/leaf-pink-round.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l8 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/leaf-cyan-2.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l9 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="/assets/images/illustrations/leaf-cyan-2.png" alt="bg-shape"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#l9 > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a class="text-white" href="https://www.facebook.com/pages/Council-on-Library-and-Information-Resources-CLIR/300100435096">&lt;i class="bi bi-facebook">&lt;/i> ...&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#parallax > ul > li:nth-child(1) > a</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a class="text-white" href="https://twitter.com/clirnews">&lt;i class="bi bi-twitter">&lt;/i> &lt;...&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#parallax > ul > li:nth-child(2) > a</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a class="text-white" href="http://www.youtube.com/user/DLFCLIR?blend=2&amp;ob=0">&lt;i class="bi bi-youtube">&lt;/i> &lt;...&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#parallax > ul > li:nth-child(3) > a</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a class="text-white" href="https://www.linkedin.com/company/6203386/">&lt;i class="bi bi-linkedin">&lt;/i> ...&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>#parallax > ul > li:nth-child(4) > a</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a target="_blank" href="https://www.clir.org/">CLIR&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(3) > div > div > div > p:nth-child(1) > a:nth-child(1)</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a target="_blank" href="https://www.diglib.org/groups/climate-justice-working-group/">DLF's Climate Justice Working G...&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(3) > div > div > div > p:nth-child(1) > a:nth-child(2)</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a target="_blank" href="https://www.imls.gov/grants/awarded/lg-254837-ols-23">IMLS Libraries Leadership Grant&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(3) > div > div > div > p:nth-child(2) > a</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=1" alt="Amanda Boczar" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(2) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=1" alt="Amanda Boczar" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(2) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=2" alt="Amy Drayer" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(3) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=2" alt="Amy Drayer" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(3) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=3" alt="Wayne Graham" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(4) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=3" alt="Wayne Graham" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(4) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=4" alt="Alice Rubin" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(5) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=4" alt="Alice Rubin" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(5) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=5" alt="Lisa Spiro" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(6) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=5" alt="Lisa Spiro" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(6) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=6" alt="Justin Wadland" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(7) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=6" alt="Justin Wadland" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(7) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=7" alt="Lena Zentall" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(8) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="https://picsum.photos/368/376?random=7" alt="Lena Zentall" class="card-img-top"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(4) > div > div > div:nth-child(8) > div > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a href="https://www.imls.gov/grants/awarded/lg-254837-ols-23" target="_blank">IMLS National Leadership Grants...&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(8) > div > div:nth-child(1) > div > p > a</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a href="https://www.imls.gov/grants/awarded/lg-254837-ols-23" target="_blank" class="text-center d-block outline-0 p-4">&lt;img class="d-unset img-fluid" ...&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(8) > div > div:nth-child(2) > div > div > a</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img class="d-unset img-fluid" alt="ILMS logo" src="/assets/images/imls.jpg"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(8) > div > div:nth-child(2) > div > div > a > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img class="d-unset img-fluid" alt="ILMS logo" src="/assets/images/imls.jpg"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > section:nth-child(8) > div > div:nth-child(2) > div > div > a > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G94.Image</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Ensure that the img element's alt text serves the same purpose and presents the same information as the image.<br /><br />
-<pre><code>&lt;img src="/assets/images/logo.png" alt="CLIR logo"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > footer > div:nth-child(1) > div > div > div:nth-child(1) > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle1.Guideline1_1.1_1_1.G73,G74</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> If this image cannot be fully described in a short text alternative, ensure a long text alternative is also available, such as in the body text or through a link.<br /><br />
-<pre><code>&lt;img src="/assets/images/logo.png" alt="CLIR logo"></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > footer > div:nth-child(1) > div > div > div:nth-child(1) > img</small></h4></div>
-</div>
-<div class="panel panel-primary">
-<div class="panel-heading">WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30</div>
-<div class="panel-body">
-<strong class="text-capitalize">notice:</strong> Check that text of the link describes the purpose of the link.<br /><br />
-<pre><code>&lt;a target="_blank" class="link-light" href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC BY-SA 4.0 License&lt;/a></code></pre>
-</div>
-<div class="panel-footer text-sm"><h4><small>html > body > footer > div:nth-child(2) > p > a</small></h4></div>
-</div>
-</div>
+	<div class="page">
 
-    </div>
-    <script>
-      var errorButton = document.querySelectorAll('.btn-danger')[0];
-      var warningButton = document.querySelectorAll('.btn-warning')[0];
-      var noticeButton = document.querySelectorAll('.btn-primary')[0];
-      var allErrors = document.querySelectorAll('.panel-danger');
-      var allWarnings = document.querySelectorAll('.panel-warning');
-      var allNotices = document.querySelectorAll('.panel-primary');
+		<h1>Accessibility Report For "https://climate-resiliency.clir.org/"</h1>
+		<p>Generated at: Tue Oct 03 2023 09:49:12 GMT-0400 (Eastern Daylight Time)</p>
 
-      function hideAll (arr) {
-        for (var i = 0; i < arr.length; i++) {
-          arr[i].classList.add('hide');
-        }
-      }
+		<p class="counts">
+			<span class="count error">5 errors</span>
+			<span class="count warning">0 warnings</span>
+			<span class="count notice">0 notices</span>
+		</p>
 
-      function showAll (arr) {
-        for (var i = 0; i < arr.length; i++) {
-          arr[i].classList.remove('hide');
-        }
-      }
+		<ul class="clean-list results-list">
+			<li class="result error">
+				<h2>Error: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1:1. Recommendation:  change text colour to #949494.</h2>
+				<p>WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</p>
+				<pre>&lt;a class=&quot;navbar-brand font-tertiary h3 text-white&quot; href=&quot;/&quot;&gt;clir&lt;/a&gt; (select with "#header &gt; nav &gt; a")</pre>
+			</li>
+			<li class="result error">
+				<h2>Error: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.24:1. Recommendation:  change background to #e32323.</h2>
+				<p>WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</p>
+				<pre>&lt;span style=&quot;font-size: 1.1em; font-weight: bold; cursor: pointer; padding-left: 10px; color: black; text-align: right; vertical-align: top;&quot;&gt;×&lt;/span&gt; (select with "#google-visualization-errors-0 &gt; span &gt; span")</pre>
+			</li>
+			<li class="result error">
+				<h2>Error: This textarea element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h2>
+				<p>WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Textarea.Name</p>
+				<pre>&lt;textarea id=&quot;g-recaptcha-response&quot; name=&quot;g-recaptcha-response&quot; class=&quot;g-recaptcha-response&quot; style=&quot;width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;&quot;&gt;&lt;/textarea&gt; (select with "#g-recaptcha-response")</pre>
+			</li>
+			<li class="result error">
+				<h2>Error: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h2>
+				<p>WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</p>
+				<pre>&lt;textarea id=&quot;g-recaptcha-response&quot; name=&quot;g-recaptcha-response&quot; class=&quot;g-recaptcha-response&quot; style=&quot;width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;&quot;&gt;&lt;/textarea&gt; (select with "#g-recaptcha-response")</pre>
+			</li>
+			<li class="result error">
+				<h2>Error: Iframe element requires a non-empty title attribute that identifies the frame.</h2>
+				<p>WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1</p>
+				<pre>&lt;iframe style=&quot;display: none;&quot;&gt;&lt;/iframe&gt; (select with "#hs-outer-captcha-target-0 &gt; iframe")</pre>
+			</li>
+		</ul>
 
-      errorButton.addEventListener('click', function () {
-        if (this.classList.contains('disabled')) {
-          this.classList.remove('disabled');
-          showAll(allErrors);
-        } else {
-          this.classList.add('disabled');
-          hideAll(allErrors);
-        }
-      });
-      warningButton.addEventListener('click', function () {
-        if (this.classList.contains('disabled')) {
-          this.classList.remove('disabled');
-          showAll(allWarnings);
-        } else {
-          this.classList.add('disabled');
-          hideAll(allWarnings);
-        }
-      });
-      noticeButton.addEventListener('click', function () {
-        if (this.classList.contains('disabled')) {
-          this.classList.remove('disabled');
-          showAll(allNotices);
-        } else {
-          this.classList.add('disabled');
-          hideAll(allNotices);
-        }
-      });
-    </script>
-  </body>
+	</div>
+
+</body>
 </html>
+
