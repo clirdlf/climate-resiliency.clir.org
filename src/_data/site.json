@@ -1,10 +1,10 @@
 {
     "lang": "en",
     "host": "clir",
-    "short_name": "Climate Resiliancy",
-    "name": "CLIR Climate Resiliancy Workshops",
+    "short_name": "Climate Resiliency",
+    "name": "CLIR Climate Resiliency Workshops",
     "icon": "/assets/images/logo.png",
-    "url": "https://climate-resiliancy.clir.org/",
+    "url": "https://climate-resiliency.clir.org/",
     "bing": "",
     "gtag": "G-KG0MS6K2T9",
     "description": "description"
