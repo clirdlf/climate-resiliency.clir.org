@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Amanda Boczar",
+        "title": "Project Director",
+        "institution": "University of South Florida",
+        "image": "https://picsum.photos/368/376?random=1"
+    },
+    {
+        "name": "Wayne Graham",
+        "title": "Advisory Committee",
+        "institution": "CLIR",
+        "image": "https://picsum.photos/368/376?random=3"
+    },
+    {
+        "name": "Alice Rubin",
+        "title": "Producer",
+        "institution": "CLIR",
+        "image": "https://picsum.photos/368/376?random=4"
+    },
+    {
+        "name": "Steve Diggs",
+        "title": "Curriculum Committee",
+        "institution": "University of California",
+        "image": "https://picsum.photos/368/376?random=5"
+    },
+    {
+        "name": "Trevor Bond",
+        "title": "Curriculum Committee",
+        "institution": "Washington State University",
+        "image": "https://picsum.photos/368/376?random=6"
+    },
+    {
+        "name": "Jennifer Embree",
+        "title": "Curriculum Committee",
+        "institution": "Binghamton University",
+        "image": "https://picsum.photos/368/376?random=7"
+    },
+    {
+        "name": "Jody Gray",
+        "title": "Curriculum Committee",
+        "institution": "University of Minnesota",
+        "image": "https://picsum.photos/368/376?random=8"
+    },
+    {
+        "name": "Jennifer Waxman",
+        "title": "Curriculum Committee",
+        "institution": "Tulane University",
+        "image": "https://picsum.photos/368/376?random=0"
+    }
+]
